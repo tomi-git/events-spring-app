@@ -13,6 +13,8 @@ public class DogadjajQueries {
         BooleanExpression query = QDogadaj.dogadaj.isNotNull();
 
         //filter
+        if (filterDto.getSifraDogadaja() != null)
+            query = query.and(QDogadaj.dogadaj.sifraDogadaja.eq(filterDto.getSifraDogadaja()));
         if (StringUtils.hasLength(filterDto.getNazivDogadaja()))
             query = query.and(QDogadaj.dogadaj.nazivDogadaja.contains(filterDto.getNazivDogadaja()));
         if (filterDto.getVrijemeOdPocetak() != null)

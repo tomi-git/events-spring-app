@@ -24,7 +24,7 @@ public class DogadajController {
     @Autowired
     DogadajService dogadajService;
 
-    @PostMapping(path = "/", consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
+    @PostMapping(path = "/", produces = "application/json;charset=UTF-8")
     public ResponseEntity create(@RequestBody DogadajDtoInput dogadajDtoInput) {
         ResponseEntity response = null;
         try {
